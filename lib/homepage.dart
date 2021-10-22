@@ -37,13 +37,45 @@ class HomePageState extends State<HomePage> {
                     width: 140,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(3),
+                      borderRadius: BorderRadius.circular(25),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.1),
                           spreadRadius: 5,
                           blurRadius: 5,
                           offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(top: 10),
+                          child: Text(
+                            "pH",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Image.asset(
+                            'assets/images/ph.png',
+                            width: 70,
+                            height: 70,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 25),
+                          child: Text(
+                            "7,3",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -56,13 +88,45 @@ class HomePageState extends State<HomePage> {
                     width: 140,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(3),
+                      borderRadius: BorderRadius.circular(25),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.1),
                           spreadRadius: 5,
                           blurRadius: 5,
                           offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(top: 10),
+                          child: Text(
+                            "Nutrisi",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Image.asset(
+                            'assets/images/flask.png',
+                            width: 70,
+                            height: 70,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 25),
+                          child: Text(
+                            "750 ppm",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -76,17 +140,49 @@ class HomePageState extends State<HomePage> {
                 height: 195,
                 width: 140,
                 decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(3),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 5,
-                          blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.1),
+                      spreadRadius: 5,
+                      blurRadius: 5,
+                      offset: Offset(0, 3), // changes position of shadow
                     ),
+                  ],
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Text(
+                        "Suhu",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 30),
+                      child: Image.asset(
+                        'assets/images/celsius.png',
+                        width: 70,
+                        height: 70,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 25),
+                      child: Text(
+                        "25 \u2103",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             )
           ],
