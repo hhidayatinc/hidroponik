@@ -50,7 +50,7 @@ class HomePageState extends State<HomePage> {
                     child: Column(
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.only(top: 10),
+                          padding: EdgeInsets.only(top: 30),
                           child: Text(
                             "pH",
                             style: TextStyle(
@@ -60,15 +60,15 @@ class HomePageState extends State<HomePage> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 30),
+                          padding: EdgeInsets.only(top: 25),
                           child: Image.asset(
                             'assets/images/ph.png',
-                            width: 70,
-                            height: 70,
+                            width: 50,
+                            height: 50,
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 25),
+                          padding: EdgeInsets.only(top: 22),
                           child: Text(
                             "7,3",
                             style: TextStyle(
@@ -101,7 +101,7 @@ class HomePageState extends State<HomePage> {
                     child: Column(
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.only(top: 10),
+                          padding: EdgeInsets.only(top: 30),
                           child: Text(
                             "Nutrisi",
                             style: TextStyle(
@@ -111,15 +111,15 @@ class HomePageState extends State<HomePage> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 30),
+                          padding: EdgeInsets.only(top: 25),
                           child: Image.asset(
                             'assets/images/flask.png',
-                            width: 70,
-                            height: 70,
+                            width: 50,
+                            height: 50,
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 25),
+                          padding: EdgeInsets.only(top: 22),
                           child: Text(
                             "750 ppm",
                             style: TextStyle(
@@ -154,7 +154,7 @@ class HomePageState extends State<HomePage> {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(top: 30),
                       child: Text(
                         "Suhu",
                         style: TextStyle(
@@ -164,15 +164,15 @@ class HomePageState extends State<HomePage> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.only(top: 20),
                       child: Image.asset(
                         'assets/images/celsius.png',
-                        width: 70,
-                        height: 70,
+                        width: 50,
+                        height: 50,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 25),
+                      padding: EdgeInsets.only(top: 22),
                       child: Text(
                         "25 \u2103",
                         style: TextStyle(
