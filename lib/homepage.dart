@@ -12,9 +12,9 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: HexColor("#109d58"),
+        backgroundColor: HexColor("#C4DF9C"),
         elevation: 0,
-        title: Text("Hydro"),
+        title: Text("Hydro", style: TextStyle(color: Colors.black),),
       ),
       body: Stack(
         children: [
@@ -23,7 +23,7 @@ class HomePageState extends State<HomePage> {
             width: double.infinity,
             height: 280,
             decoration: BoxDecoration(
-              color: HexColor("#109d58"),
+              color: HexColor("#C4DF9C"),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(70),
               ),
@@ -36,7 +36,7 @@ class HomePageState extends State<HomePage> {
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(
@@ -47,7 +47,7 @@ class HomePageState extends State<HomePage> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 Row(
@@ -78,11 +78,12 @@ class HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
+               
                 Row(
                   children: [
                     Container(
                       height: 145,
-                      width: 110,
+                      width: 90,
                       decoration: BoxDecoration(
                         color: HexColor("#F8E752"),
                         borderRadius: BorderRadius.circular(25),
@@ -131,7 +132,7 @@ class HomePageState extends State<HomePage> {
                     SizedBox(width: 22),
                     Container(
                       height: 145,
-                      width: 110,
+                      width: 90,
                       decoration: BoxDecoration(
                         color: HexColor("#F8E752"),
                         borderRadius: BorderRadius.circular(25),
@@ -180,7 +181,7 @@ class HomePageState extends State<HomePage> {
                     SizedBox(width: 22),
                     Container(
                       height: 145,
-                      width: 110,
+                      width: 90,
                       decoration: BoxDecoration(
                         color: HexColor("#F8E752"),
                         borderRadius: BorderRadius.circular(25),
