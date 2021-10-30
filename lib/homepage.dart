@@ -1,5 +1,9 @@
+import 'dart:ffi';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:hidroponik/sensor.dart';
+
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,13 +12,27 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  final databaseReference = FirebaseDatabase.instance.reference();
+  var retrievedtemp;
+
+
+   readData(){
+    databaseReference.child("Suhu").once().then((DataSnapshot snapshot) {
+      print(snapshot.value);
+      retrievedtemp = snapshot.value.toString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: HexColor("#C4DF9C"),
         elevation: 0,
-        title: Text("Hydro", style: TextStyle(color: Colors.black),),
+        title: Text(
+          "Hydro",
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Stack(
         children: [
@@ -78,7 +96,6 @@ class HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-               
                 Row(
                   children: [
                     Container(
@@ -150,7 +167,7 @@ class HomePageState extends State<HomePage> {
                           Padding(
                             padding: EdgeInsets.only(top: 10),
                             child: Text(
-                              "pH",
+                              "Nutrisi",
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -217,7 +234,7 @@ class HomePageState extends State<HomePage> {
                           Padding(
                             padding: EdgeInsets.only(top: 15),
                             child: Text(
-                              "25 \u2103",
+                              readData().toString() + " \u2103",
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,
