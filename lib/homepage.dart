@@ -1,8 +1,8 @@
-import 'dart:ffi';
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:hidroponik/sensor.dart';
+
 
 import 'package:intl/intl.dart';
 
@@ -13,13 +13,24 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   final databaseReference = FirebaseDatabase.instance.reference();
-  var retrievedtemp;
+  var retrievedTemp;
+  var retrievedDensity;
 
 
-   readData(){
-    databaseReference.child("Suhu").once().then((DataSnapshot snapshot) {
-      print(snapshot.value);
-      retrievedtemp = snapshot.value.toString();
+   readDataTemp(){
+    databaseReference.once().then((DataSnapshot snapshot) {
+      print(snapshot.value["Suhu"]);
+      retrievedTemp = snapshot.value.toString();
+      
+    });
+  }
+
+  readDataDensity(){
+    databaseReference.once().then((DataSnapshot snapshot) {
+     
+      print(snapshot.value["Kepekatan air"]);
+      
+      retrievedDensity = snapshot.value.toString();
     });
   }
 
@@ -185,7 +196,7 @@ class HomePageState extends State<HomePage> {
                           Padding(
                             padding: EdgeInsets.only(top: 15),
                             child: Text(
-                              "750 ppm",
+                              readDataDensity().toString(),
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,
@@ -234,7 +245,7 @@ class HomePageState extends State<HomePage> {
                           Padding(
                             padding: EdgeInsets.only(top: 15),
                             child: Text(
-                              readData().toString() + " \u2103",
+                              readDataTemp().toString(),
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,
