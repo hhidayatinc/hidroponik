@@ -13,14 +13,14 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   final databaseReference = FirebaseDatabase.instance.reference();
-  var retrievedTemp;
+  String retrievedTemp;
   var retrievedDensity;
 
 
    readDataTemp(){
     databaseReference.once().then((DataSnapshot snapshot) {
       print(snapshot.value["Suhu"]);
-      retrievedTemp = snapshot.value.toString();
+      retrievedTemp = snapshot.value["Suhu"].toString();
       
     });
   }
@@ -30,7 +30,7 @@ class HomePageState extends State<HomePage> {
      
       print(snapshot.value["Kepekatan air"]);
       
-      retrievedDensity = snapshot.value.toString();
+      retrievedDensity = snapshot.value["Kepekatan air"].toString();
     });
   }
 
