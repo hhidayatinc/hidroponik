@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hidroponik/homepage.dart';
 import 'package:hidroponik/splashsreen.dart';
 
 void main() {
