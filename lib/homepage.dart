@@ -1,7 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
@@ -160,33 +159,27 @@ class HomePageState extends State<HomePage>
 
   readDataDensity() {
     final databaseReference = FirebaseDatabase.instance.reference();
-    var retrievedDensity;
     databaseReference.child("ESP32_Device").once().then(
       (DataSnapshot snapshot) {
         print('Kepekatan air: ${snapshot.value["Kepekatan"]["Data"]}');
-        retrievedDensity = snapshot.value.toString();
       },
     );
   }
 
   readDataTemp() {
     final databaseReference = FirebaseDatabase.instance.reference();
-    var retrievedTemp;
     databaseReference.child("ESP32_Device").once().then(
       (DataSnapshot snapshot) {
         print('Suhu: ${snapshot.value["Suhu"]["Data"]}');
-        retrievedTemp = snapshot.value.toString();
       },
     );
   }
 
   readDatapH() {
     final databaseReference = FirebaseDatabase.instance.reference();
-    var retrievedTemp;
     databaseReference.child("ESP32_Device").once().then(
       (DataSnapshot snapshot) {
         print('pH: ${snapshot.value["pH"]["Data"]}');
-        retrievedTemp = snapshot.value.toString();
       },
     );
   }
