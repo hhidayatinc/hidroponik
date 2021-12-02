@@ -150,13 +150,49 @@ class HomePageState extends State<HomePage>
     
   }
 
-  void _showMaterialDialogpH() {
+  void _showpHnormal() {
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
             title: Text('Informasi pH'),
-            content: Text('Nilai pH yang baik untuk tanaman hidroponik adalah 5,5-6,5'),
+            content: Text('Nilai pH normal!'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Close')),
+              
+            ],
+          );
+        });
+  }
+  void _showpHasam() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Informasi pH'),
+            content: Text('Nilai pH terlalu asam! Nilai pH yang baik berkisar antara 5.5-6.5'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Close')),
+              
+            ],
+          );
+        });
+  }
+  void _showpHbasa() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Informasi pH'),
+            content: Text('Nilai pH tidak normal! Tambahkan asam nitrat untuk meningkatkan kadar pH'),
             actions: <Widget>[
               TextButton(
                   onPressed: () {
@@ -174,8 +210,11 @@ class HomePageState extends State<HomePage>
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Informasi Nutrisi'),
-            content: Text('Nilai nutrisi yang baik untuk selada peremajaan adalah 700 ppm'),
+           title: Text('Informasi Dosis Larutan Nutrisi'),
+            content: Text('Selada berumur 1-7 hari: 500 ppm' + 
+            'Selada berumur 8-14 hari: 700 ppm' + 
+            'Selada berumur 15-21 hari: 900 ppm' +
+            'Selada berumur 22 hari - panen: 900 ppm'),
             actions: <Widget>[
               TextButton(
                   onPressed: () {
@@ -246,7 +285,15 @@ class HomePageState extends State<HomePage>
       flex: 1,
       fit: FlexFit.tight,
       child: InkWell(
-        onTap: _showMaterialDialogpH,
+        onTap: (){
+          if (pHAnimation.value.toInt() >= 5.5 && pHAnimation.value.toInt() <= 6.5 ) {
+            _showpHnormal();
+          } else if (pHAnimation.value.toInt() > 6.5){
+            _showpHbasa();
+          } else{
+            _showpHasam();
+          }
+        },
         child: Container(
         height: 160,
         decoration: BoxDecoration(
