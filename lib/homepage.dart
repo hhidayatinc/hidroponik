@@ -147,6 +147,63 @@ class HomePageState extends State<HomePage>
         ),
       ),
     );
+    
+  }
+
+  void _showMaterialDialogpH() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Informasi pH'),
+            content: Text('Nilai pH yang baik untuk tanaman hidroponik adalah 5,5-6,5'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Close')),
+              
+            ],
+          );
+        });
+  }
+
+  void _showMaterialDialogNutrisi() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Informasi Nutrisi'),
+            content: Text('Nilai nutrisi yang baik untuk selada peremajaan adalah 700 ppm'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Close')),
+              
+            ],
+          );
+        });
+  }
+  void _showMaterialDialogSuhu() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Informasi Suhu'),
+            content: Text('Nilai suhu yang baik untuk tanaman hidroponik adalah 25-26' +  " \u2103"),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Close')),
+              
+            ],
+          );
+        });
   }
 
   getCurrentDate() {
@@ -188,7 +245,9 @@ class HomePageState extends State<HomePage>
     return Flexible(
       flex: 1,
       fit: FlexFit.tight,
-      child: Container(
+      child: InkWell(
+        onTap: _showMaterialDialogpH,
+        child: Container(
         height: 160,
         decoration: BoxDecoration(
           color: HexColor("#F8E752"),
@@ -236,6 +295,7 @@ class HomePageState extends State<HomePage>
           ],
         ),
       ),
+      )
     );
   }
 
@@ -243,7 +303,9 @@ class HomePageState extends State<HomePage>
     return Flexible(
       flex: 1,
       fit: FlexFit.tight,
-      child: Container(
+      child: InkWell(
+        onTap: _showMaterialDialogNutrisi,
+        child: Container(
         height: 160,
         decoration: BoxDecoration(
           color: HexColor("#F8E752"),
@@ -291,6 +353,7 @@ class HomePageState extends State<HomePage>
           ],
         ),
       ),
+      )
     );
   }
 
@@ -298,7 +361,9 @@ class HomePageState extends State<HomePage>
     return Flexible(
       flex: 1,
       fit: FlexFit.tight,
-      child: Container(
+      child: InkWell(
+        onTap: _showMaterialDialogSuhu,
+        child: Container(
         height: 160,
         decoration: BoxDecoration(
           color: HexColor("#F8E752"),
@@ -346,6 +411,9 @@ class HomePageState extends State<HomePage>
           ],
         ),
       ),
+      )
     );
   }
 }
+ 
+
