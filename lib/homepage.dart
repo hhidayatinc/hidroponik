@@ -192,7 +192,7 @@ class HomePageState extends State<HomePage>
         builder: (context) {
           return AlertDialog(
             title: Text('Informasi pH'),
-            content: Text('Nilai pH tidak normal! Tambahkan asam nitrat untuk meningkatkan kadar pH'),
+            content: Text('Nilai pH tidak normal! Tambahkan asam nitrat untuk menurunkan kadar pH'),
             actions: <Widget>[
               TextButton(
                   onPressed: () {
