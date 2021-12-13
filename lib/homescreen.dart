@@ -330,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen>
           title: Text('Informasi Dosis Larutan Nutrisi'),
           content: Text('Selada berumur 1-7 hari: 500 ppm' +
               ' Selada berumur 8-14 hari: 700 ppm' +
-              ' Selada berumur 15-21 hari: 90 ppm' +
+              ' Selada berumur 15-21 hari: 900 ppm' +
               ' Selada berumur >= 22 hari: 900 ppm'),
           actions: <Widget>[
             TextButton(
@@ -411,7 +411,7 @@ class _HomeScreenState extends State<HomeScreen>
         return AlertDialog(
           title: Text('Informasi pH'),
           content: Text(
-              'Nilai pH tidak normal! Tambahkan asam nitrat untuk meningkatkan kadar pH'),
+              'Nilai pH tidak normal! Tambahkan asam nitrat untuk menurunkan kadar pH'),
           actions: <Widget>[
             TextButton(
                 onPressed: () {

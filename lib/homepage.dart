@@ -213,7 +213,7 @@ class HomePageState extends State<HomePage>
            title: Text('Informasi Dosis Larutan Nutrisi'),
             content: Text('Selada berumur 1-7 hari: 500 ppm' + 
             ' Selada berumur 8-14 hari: 700 ppm' + 
-            ' Selada berumur 15-21 hari: 90 ppm' +
+            ' Selada berumur 15-21 hari: 900 ppm' +
             ' Selada berumur >= 22 hari: 900 ppm'),
             actions: <Widget>[
               TextButton(
